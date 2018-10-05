@@ -2,6 +2,8 @@ console.log('js');
 
 let employeesArray = [];
 
+let monthlyCosts = 0;
+
 class Employee {
     constructor(firstName, lastName, identity, title, annualSalary){
         this.firstName = firstName;
@@ -51,8 +53,7 @@ function appendEmployeeList() {
     element.empty();
     for(let employee of employeesArray) {
         console.log(employee);
-        element.append(`<li>` + employee.firstName + ` ` + employee.lastName + ` ` + employee.identity + ` ` + employee.title + ` ` + employee.annualSalary + `</liv>`);
-    
+        element.append(`<tr>` + `<td>` + employee.firstName + `</td>` + `<td>` + employee.lastName + `</td>` + `<td>` + employee.identity + `</td>` + `<td>` + employee.title + `</td>` + `<td>` + employee.annualSalary + `</td>` +`</tr>`);
 
     }
 }
