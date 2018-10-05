@@ -1,0 +1,12 @@
+html {
+    background-color: gray;
+}
+
+.yellow {
+    background-color: yellow;
+}
+
+div {
+    margin: 5px;
+    background-color: lightgray;
+}
