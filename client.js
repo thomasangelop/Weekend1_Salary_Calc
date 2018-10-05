@@ -2,8 +2,6 @@ console.log('js');
 
 let employeesArray = [];
 
-let monthlyCosts = 0;
-
 class Employee {
     constructor(firstName, lastName, identity, title, annualSalary){
         this.firstName = firstName;
@@ -56,5 +54,30 @@ function appendEmployeeList() {
         element.append(`<tr>` + `<td>` + employee.firstName + `</td>` + `<td>` + employee.lastName + `</td>` + `<td>` + employee.identity + `</td>` + `<td>` + employee.title + `</td>` + `<td>` + employee.annualSalary + `</td>` +`</tr>`);
 
     }
+
+    monthlyTotal();
 }
 
+function monthlyTotal() {
+    let monthlyCosts = 0;
+    parseInt(monthlyCosts);
+    for(monthlyPay of employeesArray){
+        console.log('monthlyPay:', monthlyPay.annualSalary);
+        monthlyCosts = monthlyCosts + parseInt(monthlyPay.annualSalary);
+        console.log('Monthly Costs Total:', monthlyCosts);
+        
+    }
+
+    $('#costs').empty('');
+    $('#costs').append(monthlyCosts/12);
+    overLimit();
+}
+
+function overLimit(){   
+    if (monthlyCosts > 20000){
+        $('#html').css("background-color", "red");
+    }
+    else{
+        return false;
+    }
+}
