@@ -70,14 +70,21 @@ function monthlyTotal() {
 
     $('#costs').empty('');
     $('#costs').append(monthlyCosts/12);
-    overLimit();
+    
+    if (monthlyCosts > 20000){
+        $('#costs').css("background-color", "red");
+    }
 }
 
-function overLimit(){   
-    if (monthlyCosts > 20000){
-        $('#html').css("background-color", "red");
-    }
-    else{
-        return false;
+function deleteEmployee() {
+    console.log('delete!');
+    let selectedItem = $(this).parent().text();
+    console.log(selectedItem);
+    for(let i = 0; i < employeesArray.length; i++){
+        if(selectedItem.includes(employeesArray[i].firstName)){
+            console.log('delete me!');
+            employeesArray.splice(i, 1);
+            $(this).parent().remove();
+        }
     }
 }
