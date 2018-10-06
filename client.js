@@ -42,6 +42,13 @@ function addEmployee() {
 
     //call function to append movie list
     appendEmployeeList();
+
+    firstNameIn = $('#firstName').val('');
+    lastNameIn = $('#lastName').val('');
+    identityIn = $('#identity').val('');
+    titleIn = $('#title').val('');
+    annualSalaryIn = $('#annualSalary').val('');
+    
 }
 
 // appending!
@@ -69,7 +76,7 @@ function monthlyTotal() {
     }
 
     $('#costs').empty('');
-    $('#costs').append(monthlyCosts/12);
+    $('#costs').append(`<h3>Total Monthly Costs:</h3>` + monthlyCosts/12);
     
     if (monthlyCosts/12 > 20000){
         $('#costs').css("background-color", "red");
@@ -77,14 +84,8 @@ function monthlyTotal() {
 }
 
 function deleteEmployee() {
-    console.log('delete!');
-    let selectedItem = $(this).parent().text();
-    console.log(selectedItem);
-    for(let i = 0; i < employeesArray.length; i++){
-        if(selectedItem.includes(employeesArray[i].firstName)){
-            console.log('delete me!');
-            employeesArray.splice(i, 1);
-            $(this).parent().remove();
-        }
-    }
+    console.log('deleteEmployee');
+    
+    $(this).closest('tr').remove();
+    
 }
