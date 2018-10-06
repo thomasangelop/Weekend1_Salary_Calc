@@ -21,7 +21,7 @@ function onReady(){
     //$('#employeeList').on('click', '.lendMovie', lendMovie);
 
     // . = class and class is best to use since it can only be used once 
-    //$('#movieList').on('click', '.deleteMovie', deleteMovie);
+    $('#employeeList').on('click', '.deleteEmployee', deleteEmployee);
 }
 
 // add movie function
@@ -51,7 +51,7 @@ function appendEmployeeList() {
     element.empty();
     for(let employee of employeesArray) {
         console.log(employee);
-        element.append(`<tr>` + `<td>` + employee.firstName + `</td>` + `<td>` + employee.lastName + `</td>` + `<td>` + employee.identity + `</td>` + `<td>` + employee.title + `</td>` + `<td>` + employee.annualSalary + `</td>` +`</tr>`);
+        element.append(`<tr>` + `<td>` + employee.firstName + `</td>` + `<td>` + employee.lastName + `</td>` + `<td>` + employee.identity + `</td>` + `<td>` + employee.title + `</td>` + `<td>` + employee.annualSalary + `</td>` + `<td>` + `<button class="deleteEmployee">Delete</button>` + `</td>` + `</tr>`);
 
     }
 
