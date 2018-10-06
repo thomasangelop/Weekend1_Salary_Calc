@@ -71,7 +71,7 @@ function monthlyTotal() {
     $('#costs').empty('');
     $('#costs').append(monthlyCosts/12);
     
-    if (monthlyCosts > 20000){
+    if (monthlyCosts/12 > 20000){
         $('#costs').css("background-color", "red");
     }
 }
